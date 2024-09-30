@@ -1,0 +1,5 @@
+ruta_serial=/dev/ttyS0
+ruta_boton=/dev/ttyUSB0
+auto_begin=False
+begin_sesion=0303E8EE
+
