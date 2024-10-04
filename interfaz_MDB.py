@@ -408,6 +408,18 @@ class SerialGUI(tk.Tk):
             self.log_file.write(log)
                 
             self.log_file.flush()
+
+        elif (ID_hex == "1704"):
+            enviar = bytes.fromhex('0B030E') #0D0D para aprobar y 0E0E para denegar
+            self.send_serial_message(enviar)
+            current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                
+            log = f"{current_time} READER: {enviar.hex()}\n"
+                
+            self.message_log.insert(tk.END, log)
+            self.log_file.write(log)
+                
+            self.log_file.flush()
                
     def send_message1(self):
         message = '0101115201003C01A3'
